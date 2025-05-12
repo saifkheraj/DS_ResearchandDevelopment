@@ -1,69 +1,96 @@
-readme_content = """
 # 🧠 Clinic AI Engine
 
-A milestone-driven research & product project to build an explainable AI system for clinical reasoning, safe treatment planning, and medication interaction filtering using Transformers + Graph Neural Networks + Retrieval-Augmented Generation (RAG).
+**Clinic AI Engine** is a milestone-driven research and product project focused on building an **explainable AI system** for:
+
+- Clinical reasoning  
+- Safe treatment planning  
+- Medication interaction filtering  
+
+The system integrates **Transformers**, **Graph Neural Networks (GNNs)**, and **Retrieval-Augmented Generation (RAG)** into a unified reasoning pipeline.
 
 ---
 
 ## 📁 Project Folder Structure Overview
 
-| Folder/File | Purpose |
-|-------------|---------|
-| `data/raw/` | Raw datasets like DrugBank, PubMed abstracts, symptom-condition CSVs |
-| `data/processed/` | Cleaned & structured data files ready for training and evaluation |
-| `data/loaders/` | Scripts for parsing raw files into usable graph or text formats |
+### 🔹 Data
 
-| `notebooks_learning/` | Course notebooks and learning experiments |
-| `notebooks_learning/ibm_generative_ai/` | Notebooks from the Gen AI  |
-| `notebooks_learning/huggingface_transformers/` | Hugging Face Transformers examples |
-| `notebooks_learning/gnns_youtube_stanford/` | Graph Neural Network concepts from CS224W |
-| `notebooks_research/` | Research & experiment notebooks for GNNs, RAG, baseline tests |
+| Folder              | Purpose                                                            |
+|---------------------|--------------------------------------------------------------------|
+| `data/raw/`         | Raw datasets (DrugBank, PubMed abstracts, symptom-condition CSVs)  |
+| `data/processed/`   | Cleaned and structured data for training and evaluation            |
+| `data/loaders/`     | Scripts to parse raw files into usable graph/text formats          |
 
-| `src/transformer/` | Fine-tuning code for Flan-T5 or BioBERT |
-| `src/gnn/` | Graph construction, GNN training, and inference |
-| `src/rag/` | RAG indexing and retrieval pipeline |
-| `src/inference/` | Unified reasoning engine combining Transformer + GNN + RAG |
-| `src/utils/` | Configs, evaluation metrics, and logging tools |
+### 🔹 Notebooks
 
-| `app/` | Streamlit UI application |
-| `app/components/` | Frontend components (forms, graph viewers, treatment table) |
-| `app/assets/` | Custom stylesheets or assets used by the app |
+| Folder                                      | Purpose                                         |
+|---------------------------------------------|-------------------------------------------------|
+| `notebooks_learning/`                       | Learning experiments and course notebooks       |
+| └── `ibm_generative_ai/`                    | IBM Gen AI notebooks                            |
+| └── `huggingface_transformers/`             | Hugging Face Transformers examples              |
+| └── `gnns_youtube_stanford/`                | Stanford CS224W GNN concepts                    |
+| `notebooks_research/`                       | Research notebooks (GNNs, RAG, baseline tests)  |
 
-| `tests/` | Unit and integration tests for all core components |
-| `publications/` | Research papers and drafts per milestone |
-| `docs/` | Diagrams, flowcharts, and internal documentation |
-| `mvp_demo/` | Deployment configs (Procfile, Docker Compose) for Hugging Face or Streamlit Cloud |
+### 🔹 Source Code
+
+| Folder              | Purpose                                                            |
+|---------------------|--------------------------------------------------------------------|
+| `src/transformer/`  | Fine-tuning (Flan-T5, BioBERT)                                     |
+| `src/gnn/`          | Graph construction, GNN training and inference                     |
+| `src/rag/`          | RAG indexing and retrieval pipeline                                |
+| `src/inference/`    | Unified reasoning engine (Transformer + GNN + RAG)                 |
+| `src/utils/`        | Configs, evaluation metrics, logging tools                         |
+
+### 🔹 Application
+
+| Folder              | Purpose                                                            |
+|---------------------|--------------------------------------------------------------------|
+| `app/`              | Streamlit UI application                                           |
+| └── `components/`   | UI components (forms, graphs, treatment tables)                    |
+| └── `assets/`       | Custom stylesheets and frontend assets                             |
+
+### 🔹 Other
+
+| Folder              | Purpose                                                            |
+|---------------------|--------------------------------------------------------------------|
+| `tests/`            | Unit and integration tests                                         |
+| `publications/`     | Research papers and milestone drafts                               |
+| `docs/`             | Internal documentation, flowcharts, diagrams                       |
+| `mvp_demo/`         | Deployment configs (Docker, Streamlit Cloud, Hugging Face Spaces)  |
 
 ---
 
 ## 🔧 Root Files
 
-| File | Purpose |
-|------|---------|
-| `README.md` | This file: project overview + folder guide |
-| `LICENSE` | Open-source license (e.g., MIT) |
-| `Makefile` | CLI shortcuts: `make train`, `make build`, `make run` |
-| `.env.example` | Template for API keys and model paths |
-| `requirements.txt` | Python package list for pip |
-| `environment.yml` | Conda environment (optional) |
-| `.gitignore` | Ignores data dumps, logs, secrets, models |
+| File                | Purpose                                      |
+|---------------------|----------------------------------------------|
+| `README.md`         | Project overview and folder guide            |
+| `LICENSE`           | Open-source license (e.g., MIT)              |
+| `Makefile`          | CLI commands: `make train`, `make run`, etc. |
+| `.env.example`      | API key and model path template              |
+| `requirements.txt`  | Python packages for `pip`                    |
+| `environment.yml`   | Conda environment specification (optional)   |
+| `.gitignore`        | Excludes logs, dumps, models, secrets        |
 
 ---
 
 ## 📌 Milestone Highlights
 
-1. 🔬 Fine-tune transformer on symptom→diagnosis tasks (Week 1–2)
-2. 📖 Build RAG pipeline for citation-backed diagnosis (Week 3–4)
-3. 🌐 Train GNN for allergy-aware medication filtering (Week 5–8)
-4. 🧠 Merge into a unified explainable reasoning engine (Week 9–12)
-5. 🚀 Streamlit MVP + academic paper submission (Week 13–16)
+| Milestone                                                   | Timeline     |
+|-------------------------------------------------------------|--------------|
+| 🔬 Fine-tune Transformer on symptom → diagnosis             | Week 1–2     |
+| 📖 Build RAG pipeline with citation-backed reasoning         | Week 3–4     |
+| 🌐 Train GNN for allergy-aware medication filtering          | Week 5–8     |
+| 🧠 Integrate Transformer + GNN + RAG into a single engine     | Week 9–12    |
+| 🚀 Streamlit MVP + academic paper submission                 | Week 13–16   |
 
 ---
 
 ## 📦 How to Get Started
 
+Clone the repository and run the app locally:
+
 ```bash
 git clone https://github.com/yourname/clinical-ai-engine.git
 cd clinical-ai-engine
-make setup        # optional: creates env and installs requirements
-make run-app      # launches Streamlit demo locally
+make setup        # Optional: creates environment & installs requirements
+make run-app      # Launches Streamlit demo locally
